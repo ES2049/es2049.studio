@@ -1,7 +1,8 @@
 <details>
   <summary>不要点这里</summary>
-  <p>😂 既然点了，说明有缘，要不来封简历？前端方向，杭州 & 北京，[邮箱](mailto:caijun.hcj@alibaba-inc.com)</p>
+  <p>😂 既然点了，说明有缘，要不来封简历？前端方向，杭州 & 北京，<a href="mailto:caijun.hcj@alibaba-inc.com">邮箱</a></p>
 </details>
+<br><br>
 
 ## 博客专栏
 
