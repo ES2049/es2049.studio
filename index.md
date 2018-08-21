@@ -1,4 +1,4 @@
-既然看到这了，说明有缘分，千言万语汇成一句话：我们缺人！前端方向，杭州 & 北京，简历砸向 `caijun.hcj(at)alibaba-inc.com`
+既然看到这了，说明有缘，要不来封简历？前端方向，杭州 & 北京，`caijun.hcj(at)alibaba-inc.com`
 
 ## 博客专栏
 
