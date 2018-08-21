@@ -1,4 +1,4 @@
-既然看到这了，说明有缘，要不来封简历？前端方向，杭州 & 北京，`caijun.hcj(at)alibaba-inc.com`
+既然看到这了，说明有缘，要不来封简历？前端方向，杭州 & 北京，[邮箱](mailto:caijun.hcj@alibaba-inc.com)
 
 ## 博客专栏
 
