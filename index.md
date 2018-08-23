@@ -1,5 +1,3 @@
-<img src="https://img.alicdn.com/tfs/TB1ecu2r_qWBKNjSZFxXXcpLpXa-1024-1024.png" width="128" height="128">
-
 <details>
   <summary>不要点这里</summary>
   <br>
