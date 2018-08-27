@@ -72,4 +72,24 @@
     </div>
   </div>
 
+  <div class="hexagon-wrapper">
+    <div class="hexagon-wrapper-1">
+      <div class="hexagon-wrapper-2">
+        <div class="hexagon-wrapper-3">
+          <img src="https://img.alicdn.com/tfs/TB17RqWtXkoBKNjSZFkXXb4tFXa-3840-2160.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hexagon-wrapper">
+    <div class="hexagon-wrapper-1">
+      <div class="hexagon-wrapper-2">
+        <div class="hexagon-wrapper-3">
+          <img src="https://img.alicdn.com/tfs/TB1Dmgcs67nBKNjSZLeXXbxCFXa-4816-3052.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
