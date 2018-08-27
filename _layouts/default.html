@@ -7,12 +7,14 @@
 
 {% seo %}
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="//gw.alicdn.com/bao/uploaded/TB12cYytiMnBKNjSZFCXXX0KFXa.css">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
   </head>
   <body>
+    <canvas class="particles"></canvas>
     <div class="wrapper">
 
       <section>
@@ -30,6 +32,100 @@
       </section>
 
     </div>
+    
+  <script>
+    function setPosition(){
+      const list = document.querySelectorAll('.hexagon-wrapper');
+      if(document.body.clientWidth<480){
+        for (let i = 0; i < list.length; i++) {
+          list[i].style.position = 'static';
+          list[i].style.transformOrigin = 'left';
+          list[i].style.transform = 'scale(0.9)';
+        }
+      }else{
+        const divH = 360 + 20;
+        const fixLeft = -200;
+        const fixTop = 100;
+        const hexagonLen = divH / Math.sqrt(3);
+        for (let i = 0; i < list.length; i++) {
+          const row = ~~(i / 3) + 1;
+          const col = i % 3 + 1;
+          const left = fixLeft + (col - 1) * (1.5 * hexagonLen);
+          const top = fixTop + (row - 1) * divH - (col % 2 === 0 ? divH / 2 : 0);
+          list[i].style.position = 'absolute';
+          list[i].style.transform = 'scale(1)';
+          list[i].style.left = left + 'px';
+          list[i].style.top = top + 'px';
+        }
+      }
+    }
+
+    class Particles{
+      constructor(){
+        this.init()
+      }
+      init(){
+        this.x = Math.random()*width;
+        this.y = Math.random()*10;
+        this.alpha = 0.1+Math.random()*0.3;
+        this.scale = 0.1+Math.random()*0.2;
+        this.hue = Math.random()*360;
+        this.v = Math.random();
+        this.xv = Math.random();
+      }
+      draw () {
+        if(this.alpha <= 0) {
+          this.init();
+        }
+        this.y += this.v;
+        this.x += this.xv;
+        if(Math.random()<0.01){
+          this.xv = -this.xv
+        }
+        this.alpha -= (10+Math.random()*100)/60000;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.scale*10, 0, 2 * Math.PI, false);
+        ctx.fillStyle = `hsla(${this.hue},100%,70%,${this.alpha})`;
+        ctx.fill();
+      };
+    };
+
+    let canvas,width,height,ctx,particles;
+    function resizeCanvas(){
+      canvas = document.querySelector('.particles');
+      width = canvas.clientWidth;
+      height = canvas.clientHeight;
+      ctx = canvas.getContext('2d');
+      const ratio = window.devicePixelRatio;
+      canvas.width = ratio*width;
+      canvas.height = ratio*height;
+      ctx.scale(ratio, ratio);
+    }
+
+    function animate() {
+      ctx.clearRect(0,0,width,height);
+      for(let i in particles) {
+        particles[i].draw();
+      }
+      window.requestAnimationFrame(animate);
+    }
+    function load(){
+      setPosition();
+      resizeCanvas();
+      particles = [];
+      for(var i = 0; i < width; i+=1) {
+        var c = new Particles();
+        particles.push(c);
+      }
+      animate();
+    }
+    function resize(){
+      setPosition();
+      resizeCanvas();
+    }
+    window.addEventListener('load',load)
+    window.addEventListener('resize',resize)
+  </script>
 
   </body>
 </html>
