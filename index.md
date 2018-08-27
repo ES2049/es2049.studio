@@ -21,6 +21,7 @@
 ## 团队秀
 
 <div class="photowall">
+
   <div class="hexagon-wrapper">
     <div class="hexagon-wrapper-1">
       <div class="hexagon-wrapper-2">
@@ -30,8 +31,7 @@
       </div>
     </div>
   </div>
-</div>
-<div class="photowall">
+
   <div class="hexagon-wrapper">
     <div class="hexagon-wrapper-1">
       <div class="hexagon-wrapper-2">
@@ -41,8 +41,7 @@
       </div>
     </div>
   </div>
-</div>
-<div class="photowall">
+
   <div class="hexagon-wrapper">
     <div class="hexagon-wrapper-1">
       <div class="hexagon-wrapper-2">
@@ -52,8 +51,7 @@
       </div>
     </div>
   </div>
-</div>
-<div class="photowall">
+
   <div class="hexagon-wrapper">
     <div class="hexagon-wrapper-1">
       <div class="hexagon-wrapper-2">
@@ -63,8 +61,7 @@
       </div>
     </div>
   </div>
-</div>
-<div class="photowall">
+
   <div class="hexagon-wrapper">
     <div class="hexagon-wrapper-1">
       <div class="hexagon-wrapper-2">
@@ -74,4 +71,5 @@
       </div>
     </div>
   </div>
+
 </div>
