@@ -17,7 +17,8 @@ const color3 = {
   l: '50%',
   a: '80%'
 };
-const points = [];
+const points1 = [];
+const points2 = [];
 const Actions = [{
     lifeTime: 60,
     texts: [{
@@ -28,13 +29,21 @@ const Actions = [{
   {
     lifeTime: 90,
     func: (width, height) => {
+      if(!points1.length){
+        for(let i=0;i<1200;i++){
+          let x = (i - 1200 / 2) / 300;
+          let y = Math.sqrt(Math.abs(x)) - Math.sqrt(Math.cos(x)) * Math.cos(30 * x);
+          if(!isNaN(y)){
+            points1.push({x,y})
+          }
+        }
+      }
+
+      const p = points1[~~(Math.random() * points1.length)]
       const radius = Math.min(width * 0.4, height * 0.4);
-      const i = Math.random() * 1200;
-      let x = (i - 1200 / 2) / 300;
-      let y = Math.sqrt(Math.abs(x)) - Math.sqrt(Math.cos(x)) * Math.cos(30 * x);
       return {
-        x: x * radius / 2,
-        y: y * radius / 2,
+        x: p.x * radius / 2,
+        y: p.y * radius / 2,
         z: ~~(Math.random() * 30),
         color: {
           h: 0,
@@ -55,7 +64,7 @@ const Actions = [{
   {
     lifeTime: 90,
     func: (width, height) => {
-      if(!points.length){
+      if(!points2.length){
         const img = document.getElementById("tulip");
         const offscreenCanvas = document.createElement('canvas');
         const offscreenCanvasCtx = offscreenCanvas.getContext('2d');
@@ -67,15 +76,14 @@ const Actions = [{
         let imgData = offscreenCanvasCtx.getImageData(0, 0, imgWidth, imgHeight);
         for (let i = 0, max = imgData.width * imgData.height; i < max; i++) {
           if (imgData.data[i * 4 + 3]) {
-            points.push({
+            points2.push({
               x: (i % imgData.width) / imgData.width,
               y: (i / imgData.width) / imgData.height
             });
           }
         }
       }
-      
-      const p = points[~~(Math.random() * points.length)]
+      const p = points2[~~(Math.random() * points2.length)]
       const radius = Math.min(width * 0.8, height * 0.8);
       return {
         x: p.x * radius - radius / 2,
@@ -98,7 +106,7 @@ const Actions = [{
     }]
   },
   {
-    lifeTime: Infinity, // 山无棱，天地合
+    lifeTime: 180,
     texts: [{
         text: 'I',
         hsla: color2
