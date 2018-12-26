@@ -23,7 +23,7 @@
 
  - [语雀](https://www.yuque.com/es2049/blog)
  - [掘金](https://juejin.im/user/5b2a365251882574a54da0bb/posts)
- - [知乎](https://zhuanlan.zhihu.com/es2049)
+ - [知乎](https://zhuanlan.zhihu.com/es2049)（已停更）
  - [SegmentFault](https://segmentfault.com/blog/es2049)
 
 ## 团队秀
